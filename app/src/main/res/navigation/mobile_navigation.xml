@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_user">
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.example.app_name.view.fragments.users.UsersFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/action_navigation_user_to_navigation_user_detail"
+            app:destination="@id/navigation_user_detail" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_user_detail"
+        android:name="com.example.app_name.view.fragments.userDetail.UserDetailFragment"
+        android:label="@string/title_user_detail"
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="user_detail"
+            android:defaultValue="@null"
+            app:argType="com.example.app_name.models.userDetailModel.UserDetailResponse"
+            app:nullable="true" />
+    </fragment>
+</navigation>
